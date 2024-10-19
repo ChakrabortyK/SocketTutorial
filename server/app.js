@@ -56,8 +56,10 @@ io.on("connection", (socket) => {
   console.log("User Connected", socket.id);
 
   socket.on("message", ({ room, message }) => {
-    console.log({ room, message });
+    // socket.on("message", (message) => {
+    console.log(message);
     socket.to(room).emit("receive-message", message);
+    // socket.broadcast.emit("receive-message", message);
   });
 
   socket.on("join-room", (room) => {

@@ -26,6 +26,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     socket.emit("message", { message, room });
+    // socket.emit("message", { message });
     setMessage("");
   };
 
@@ -57,7 +58,7 @@ const App = () => {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ height: 500 }} />
+      <Box sx={{ height: 200 }} />
       <Typography variant="h6" component="div" gutterBottom>
         {socketID}
       </Typography>
